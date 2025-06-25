@@ -1,11 +1,11 @@
 FROM php:8.2-fpm
 
-# Instala extensões comuns do Laravel
+# Instala dependências básicas
 RUN apt-get update && apt-get install -y \
-    zip unzip curl libpng-dev libonig-dev libxml2-dev git \
+    zip unzip curl git libpng-dev libonig-dev libxml2-dev \
     && docker-php-ext-install pdo pdo_mysql mbstring exif pcntl bcmath gd
 
-# Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+# Instala o Composer manualmente
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 WORKDIR /var/www

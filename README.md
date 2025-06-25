@@ -5,3 +5,8 @@ Study about online servers, security, safety, performance, admin, etc
 
 ## Objetivo
 Improve my knowledge about server and algorithms
+
+
+docker-compose run --rm app composer create-project laravel/laravel .
+
+docker-compose up -d --build
