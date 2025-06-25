@@ -7,6 +7,13 @@ Study about online servers, security, safety, performance, admin, etc
 Improve my knowledge about server and algorithms
 
 
+
+
+# build
+docker-compose build
+
+# run
 docker-compose run --rm app composer create-project laravel/laravel .
 
+# run 2
 docker-compose up -d --build
